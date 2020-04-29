@@ -2,6 +2,7 @@
 '''create a variable app, instance of Flask'''
 from flask import Flask, make_response, jsonify
 from models import storage
+from flask_cors import CORS
 from api.v1.views import app_views
 import os
 
@@ -22,7 +23,7 @@ def page_not_found(error):
 if __name__ == "__main__":
     API_HOST = os.getenv('HBNB_API_HOST')
     API_PORT = os.getenv('HBNB_API_PORT')
-
+    cors = CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
     host = '0.0.0.0' if not API_HOST else API_HOST
     port = 5000 if not API_PORT else API_PORT
     app.run(host=host, port=port, threaded=True)
