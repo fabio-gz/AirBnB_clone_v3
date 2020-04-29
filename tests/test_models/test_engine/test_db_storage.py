@@ -18,6 +18,8 @@ import json
 import os
 import pep8
 import unittest
+from models import storage
+
 DBStorage = db_storage.DBStorage
 classes = {"Amenity": Amenity, "City": City, "Place": Place,
            "Review": Review, "State": State, "User": User}
@@ -66,6 +68,22 @@ test_db_storage.py'])
                              "{:s} method needs a docstring".format(func[0]))
             self.assertTrue(len(func[1].__doc__) >= 1,
                             "{:s} method needs a docstring".format(func[0]))
+
+    def test_get_func(self):
+        """test for the get function"""
+        first_state_id = list(storage.all(State).values())[0].id
+        t_get = storage.get(State, first_state_id)
+        self.assertEqual(type(t_get), models.state.State)
+
+    def test_count_func(self):
+        """test for count function"""
+        c = storage.count()
+        self.assertEqual(type(c), int)
+
+    def test_count_error(self):
+        """test error for count"""
+        with self.assertRaises(NameError):
+            storage.count(hola)
 
 
 class TestFileStorage(unittest.TestCase):
