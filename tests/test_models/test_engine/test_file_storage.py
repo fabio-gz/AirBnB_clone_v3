@@ -79,6 +79,12 @@ test_file_storage.py'])
         with self.assertRaises(NameError):
             storage.count(hola)
 
+    def test_get_func(self):
+        """test for the get function"""
+        first_state_id = list(storage.all(State).values())[0].id
+        t_get = storage.get(State, first_state_id)
+        self.assertEqual(type(t_get), models.state.State)
+
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
