@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+'''Flask API routes for methods'''
 from flask import Flask, abort, jsonify, request, make_response
 from models import storage
 from models.state import State
 from api.v1.views import app_views
 
 
-@app_views.route('/states', methods=['GET'],  strict_slashes=False)
+@app_views.route('/states', methods=['GET'], strict_slashes=False)
 def list_all():
     '''List all State object'''
     com_objs = storage.all(State).values()
@@ -15,7 +16,7 @@ def list_all():
     return (jsonify(list_val))
 
 
-@app_views.route('/states/<state_id>', methods=['GET'],  strict_slashes=False)
+@app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 def linked_id(state_id):
     '''Retrieves State object that are id linked'''
     objs_id = storage.get(State, state_id)
