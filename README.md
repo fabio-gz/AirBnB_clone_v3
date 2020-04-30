@@ -156,10 +156,10 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
+Fabio Gomez - [Github](https://github.com/fabio-gz) / [Twitter](https://twitter.com/fabio_gz)
+Pilar Pinto - [Github](https://github.com/PilarPinto) / [Twitter](https://https://twitter.com/Pilyandree)
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
-Fabio Gomez - [Github](https://github.com/fabio-gz) / [Twitter](https://https://twitter.com/fabio_gz)
-Fabio Gomez - [Github](https://github.com/fabio-gz) / [Twitter](https://https://twitter.com/fabio_gz)
 
 Second part of Airbnb: Joann Vuong
 ## License
